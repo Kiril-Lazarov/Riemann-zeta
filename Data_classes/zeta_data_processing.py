@@ -7,7 +7,7 @@ from Data_classes.booleans import Booleans
 from Data_classes.algorithm_variables import AlgorithmVariables
 from Animation_layers.animation_layers import AnimationLayers
 
-from formula_functions import E
+# from formula_functions import E
 
 
 class DataProcessing():

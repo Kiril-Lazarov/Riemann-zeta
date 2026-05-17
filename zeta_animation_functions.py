@@ -2,7 +2,7 @@ import pygame
 import numpy as np
 from scipy.integrate import quad
 
-from formula_functions import *
+# from formula_functions import *
 
 
 def create_background(background_surface, screen_width, screen_height, length, center_point, bg_color, font_small):
@@ -163,7 +163,7 @@ def draw_y_axis_pos_values(background_surface, center_point_y, screen_width, scr
     if i >=1:
 
         #Draw positive numbers
-        neg_number_text = font_small.render(f'{i}', True, line_color)
+        neg_number_text = font_small.render(f'{i}i', True, line_color)
         background_surface.blit(neg_number_text, (number_x-(font_height/0.36),horizontal_line_y_pos-(font_height/6.5)))
         
         
@@ -184,7 +184,7 @@ def draw_y_axis_neg_values(background_surface, center_point_y, screen_width, scr
     if i >=1:
        
         #Draw negative numbers
-        neg_number_text = font_small.render(f'-{i}', True, line_color)
+        neg_number_text = font_small.render(f'-{i}i', True, line_color)
         background_surface.blit(neg_number_text, (number_x-(font_height/0.36),horizontal_line_y_neg-(font_height/6.5))) 
 
         
