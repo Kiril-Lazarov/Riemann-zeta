@@ -168,46 +168,47 @@ def handle_key_commands(data_processing):
                     updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
 
 
-            elif keys[pygame.K_v]:
+            # elif keys[pygame.K_v]:
 
                 # Increase spiral radius velocity `v`
-                if keys[pygame.K_UP]:
-                    var_params_dict['v'] += steps_dict_constants['v'] * factors_dict['v']          
+            elif keys[pygame.K_UP]:
+                var_params_dict['v'] += steps_dict_constants['v'] * factors_dict['v']          
 
 
-                    updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
+                updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
 
                 # Decrease spiral radius velocity `v`
-                elif keys[pygame.K_DOWN]:      
+            elif keys[pygame.K_DOWN]:      
                     
-                    possible_v = const_params_dict['v'] + (var_params_dict['v'] - steps_dict_constants['v'] * 
-                                 factors_dict['v'])
-                    if possible_v >= 0:
+                    # possible_v = const_params_dict['v'] + (var_params_dict['v'] - steps_dict_constants['v'] * 
+                    #              factors_dict['v'])
+                    # if possible_v >= 0:
                     
-                        var_params_dict['v'] -= steps_dict_constants['v'] * factors_dict['v']
+                var_params_dict['v'] -= steps_dict_constants['v'] * factors_dict['v']
 
-                        updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
+                updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
 
 
 
-            elif keys[pygame.K_t]:
+            # elif keys[pygame.K_t]:
 
                 # Increase time `t`
-                if keys[pygame.K_UP]:
-                    var_params_dict['t'] += steps_dict_constants['t'] * factors_dict['t']            
+            elif keys[pygame.K_RIGHT]:
+                
+                var_params_dict['t'] += steps_dict_constants['t'] * factors_dict['t']            
 
-                    updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
+                updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
 
                 # Decrease time `t`
-                elif keys[pygame.K_DOWN]:  
+            elif keys[pygame.K_LEFT]:  
 
-                    possible_t = const_params_dict['t'] + (var_params_dict['t'] - steps_dict_constants['t'] * 
-                                 factors_dict['t']) 
+                    # possible_t = const_params_dict['t'] + (var_params_dict['t'] - steps_dict_constants['t'] * 
+                    #              factors_dict['t']) 
                     
-                    if possible_t >= 0:
-                        var_params_dict['t'] -= steps_dict_constants['t'] * factors_dict['t']
+                    # if possible_t >= 0:
+                var_params_dict['t'] -= steps_dict_constants['t'] * factors_dict['t']
 
-                        updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
+                updates_dict['update_screen'], updates_dict['update_spiral'] = True, True
                         
             # Line parameters
             elif keys[pygame.K_a]:
