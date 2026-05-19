@@ -2,6 +2,8 @@ import pygame
 import numpy as np
 from scipy.integrate import quad
 
+from mpmath import zeta
+
 # from formula_functions import *
 
 
@@ -402,6 +404,36 @@ def draw_line(line_layer, screen_height, screen_width, half_screen_width, half_s
      
  
         pygame.draw.aalines(line_layer, 'blue',  False, [(x_left, y_left), (x_right, y_right)])
+
+        
+
+def draw_argument_dot(spiral_layer, half_screen_width, half_screen_height, 
+                center_point_width, center_point_height, length, Re, Im):
+    
+    spiral_layer.fill((0, 0, 0, 0))
+
+    color = 'red'
+
+    # Transform the x and y spiral coords into the screen coordinate system
+    Re_arg = x_transform(Re, center_point_width, length)
+    Im_arg = y_transform(Im, center_point_height, length)
+
+    s = complex(Re, Im)
+
+    z = zeta(s)
+
+    Re_zeta = round(complex(z).real,5)
+    Im_zeta = round(complex(z).imag,5)
+
+    Re_zeta = x_transform(Re_zeta, center_point_width, length)
+    Im_zeta = y_transform(Im_zeta, center_point_height, length)
+    
+    
+
+    pygame.draw.circle(spiral_layer, color='red', center=(Re_arg, Im_arg), radius=4)
+    pygame.draw.circle(spiral_layer, color='blue', center=(Re_zeta, Im_zeta), radius=4)
+    
+    
     
     
 
